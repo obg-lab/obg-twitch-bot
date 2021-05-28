@@ -1,0 +1,16 @@
+{
+  "name": "obg-twitch-bot",
+  "version": "0.0.0",
+  "description": "Robô cansado do Germano para Twitch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "twitch",
+    "bot",
+    "nodejs"
+  ],
+  "author": "Bruno Germano <bruno@egermano.com>",
+  "license": "ISC"
+}
