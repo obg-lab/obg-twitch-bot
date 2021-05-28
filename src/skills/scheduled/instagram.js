@@ -17,7 +17,7 @@ export const start = () => {
     'Quer saber mais sobre tecnologia e acampanhar um pouco da rotina do Germano? Então siga ele no instagram: https://instagram.com/egermano',
   ];
 
-  cron.schedule('0 */16 * * * *', () => {
+  cron.schedule('0 */21 * * * *', () => {
     say(messages[0]);
   });
 };

@@ -17,7 +17,7 @@ export const start = () => {
     'Faça parte da comunidade do discord. https://discord.gg/3UKZT7cVWG',
   ];
 
-  cron.schedule('0 */16 * * * *', () => {
+  cron.schedule('0 */15 * * * *', () => {
     say(messages[0]);
   });
 };
