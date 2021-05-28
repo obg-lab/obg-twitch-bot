@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon --inspect -w ./src src/index.js | pino-pretty",
+    "dev": "NODE_ENV=local nodemon --inspect -w ./src src/index.js | pino-pretty",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
