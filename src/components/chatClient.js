@@ -42,5 +42,14 @@ export const connect = async () => {
   });
 };
 
-export const say = async (message) =>
+export const say = async (message) => {
   client.say(process.env.CHANNEL_NAME, message);
+
+  logger.info(
+    {
+      channel: process.env.CHANNEL_NAME,
+      sent: message,
+    },
+    'Message sent to bot.'
+  );
+};
