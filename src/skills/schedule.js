@@ -24,15 +24,15 @@ export const scheduled = () => {
           const index = Math.floor(Math.random() * messages.length);
           const message = messages[index];
 
-          logger.info({ message }, 'Sending message');
-
           if (streaming) {
             const isStreaming = await isUserStreaming(username);
 
             if (isStreaming) {
               return say(message);
             }
-          }
+          } else {
+            return say(message);
+          } 
         } catch (error) {
           logger.error(error, `Error sending scheduled ${name} message`);
         }
