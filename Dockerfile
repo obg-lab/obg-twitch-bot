@@ -10,5 +10,6 @@ COPY package*.json .env ./
 RUN npm ci
 
 COPY src ./src
+COPY config ./config
 
 CMD [ "npm", "start" ]
