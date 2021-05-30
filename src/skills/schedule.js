@@ -26,8 +26,12 @@ export const scheduled = () => {
 
           logger.info({ message }, 'Sending message');
 
-          if (streaming && isUserStreaming(username)) {
-            return say(message);
+          if (streaming) {
+            const isStreaming = await isUserStreaming(username);
+
+            if (isStreaming) {
+              return say(message);
+            }
           }
         } catch (error) {
           logger.error(error, `Error sending scheduled ${name} message`);
