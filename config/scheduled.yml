@@ -1,0 +1,20 @@
+- name: instagram
+  streaming: true
+  username: egermano
+  schedule: '0 */17 * * * *'
+  messages:
+    - 'Quer saber mais sobre tecnologia e acampanhar um pouco da rotina do Germano? Então siga ele no instagram: https://instagram.com/egermano'
+- name: discord
+  streaming: true
+  username: egermano
+  schedule: '10 */23 * * * *'
+  messages:
+    - 'Faça parte da comunidade do discord. https://discord.gg/3UKZT7cVWG'
+- name: youtube
+  streaming: true
+  username: egermano
+  schedule: '20 */11 * * * *'
+  messages:
+    - 'Quer aprender mais sobre tecnologia? Veja os videos do youtube do Germano. https://youtube.com/egermano'
+    - 'Você sabia que além de live aqui na twitch o Germano também tem um canal bem legal no Youtube? Ele sempre da dicas de tecnologia e faz uns projetos malucos por lá. https://youtube.com/egermano'
+    - 'O Germano também tem um canal no youtube. Corre lá e se inscreve agora. https://youtube.com/egermano'
