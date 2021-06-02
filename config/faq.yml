@@ -1,6 +1,7 @@
 - name: sistema operacional
-  keywords: sistema operacional, OS, linux, windows, OSx
-  streaming: true
+  keywords: sistema operacional, OS, linux, windows, OSx, mac
+  streaming: false
   username: egermano
   answers:
-    - O Germano usa o Pop!_OS como sistema operacional para trablahar, mas ele também tem PCs com windows, Ubuntu 20 e uma Macbook
+    - O @egermano usa o Pop!_OS como sistema operacional para trabalhar, mas ele também tem PCs com windows, Ubuntu 20 e uma Macbook
+    - O @egermano trabalha com o Pop!_OS
