@@ -1,4 +1,3 @@
-import cron from 'node-cron';
 import { say, chatEvents } from '../components/chatClient.js';
 import { logger } from '../logger/index.js';
 import { load } from '../service/configFiles.js';
@@ -12,8 +11,6 @@ export const faq = () => {
       const username = context['display-name'];
 
       const isQuestion = message.split('')[message.length - 1] === '?';
-
-      console.log(isQuestion);
 
       if (!isQuestion || username === process.env.BOT_USERNAME) {
         return false;
