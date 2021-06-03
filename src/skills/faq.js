@@ -38,7 +38,7 @@ export const faq = () => {
         const index = Math.floor(Math.random() * answer.answers.length);
         const messageToSay = answer.answers[index];
 
-        if (streaming) {
+        if (answer.streaming) {
           const isStreaming = await isUserStreaming(username);
 
           if (isStreaming) {
