@@ -1,0 +1,26 @@
+- name: discord
+  username: egermano
+  streaming: false
+  messages:
+    - 'Comunidade do discord: https://discord.gg/3UKZT7cVWG'
+- name: ghjornada
+  username: egermano
+  streaming: false
+  messages:
+    - 'Github do jornadas.dev https://github.com/obg-lab/jornada-site e https://github.com/obg-lab/jornada-emails'
+- name: youtube
+  username: egermano
+  streaming: false
+  messages:
+    - 'Segue o @egermano lá no yotube, Tem muito conteúdo legal sobre tecnologia por lá. https://youtube.com/egermano'
+- name: instagram
+  username: egermano
+  streaming: false
+  messages:
+    - 'Quer mais conteúdo sobre tecnologia e acompanhar um pouco da rotina do @egermano? Segue ele no instagram. https://instagram.com/egermano'
+- name: github
+  username: egermano
+  streaming: false
+  messages:
+    - 'Segue o @egermano também no github: https://github.com/egermano'
+
