@@ -3,5 +3,12 @@
   streaming: false
   username: egermano
   answers:
-    - O @egermano usa o Pop!_OS como sistema operacional para trabalhar, mas ele também tem PCs com windows, Ubuntu 20 e uma Macbook
+    - O @egermano usa o Pop!_OS como sistema operacional para trabalhar, mas ele também tem PCs com windows, Ubuntu 20 e um Macbook
     - O @egermano trabalha com o Pop!_OS
+- name: servidores
+  keywords: servidor, NAS, Unraid, udoo, home assistant
+  streaming: false
+  username: egermano
+  answers:
+    - "O @egermano montou um servidor a partir de um Xeon E5 usado e instalou o URANID. Veja o vídeo da montagem do servidor: https://www.youtube.com/watch?v=pFUoFV83P7k"
+    - "O @germano tem 2 servidores atualmente um Xeon E5 com Unraid e um Udoo X86 com Ubuntu 20.04 para automação residêncial."
