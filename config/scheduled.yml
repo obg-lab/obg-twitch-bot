@@ -49,3 +49,10 @@
     - "Isso de nada adiantará, vamos todos morrer... se tivermos sorte!"
     - "Só ao tentar me colocar no seu nível intelectual, fico com dor de cabeça."
     - "Gostaria de dizer que é um grande prazer, uma enorme honra e um privilégio para mim inaugurar esta ponte mas, já que não estou com meu chip de cinismo ligado, quero dizer que odeio e desprezo todos vocês."
+- name: follow
+  streaming: true
+  username: egermano
+  schedule: '40 */11 * * * *'
+  messages:
+    - Se você ta curtindo essa live, deixa seu follow
+    - Se você chegou até aui nessa lice e ja deixou seu follow, considere ser subscriber.
