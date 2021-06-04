@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js | pino-elasticsearch --node $ELASTICSEARCH_HOSTS",
-    "dev": "NODE_ENV=local nodemon --inspect -w ./src src/index.js | pino-pretty",
+    "start": "node --experimental-json-modules src/index.js | pino-elasticsearch --node $ELASTICSEARCH_HOSTS",
+    "dev": "NODE_ENV=local nodemon --inspect --experimental-json-modules -w ./src src/index.js | pino-pretty",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -22,6 +22,7 @@
     "node-cron": "^3.0.0",
     "pino": "^6.11.3",
     "pino-elasticsearch": "^5.4.0",
+    "pkginfo": "^0.4.1",
     "tmi.js": "^1.8.3",
     "twitch": "^4.5.5",
     "twitch-auth": "^4.5.5",
