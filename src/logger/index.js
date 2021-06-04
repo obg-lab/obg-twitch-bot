@@ -1,5 +1,5 @@
 import pino from 'pino';
-import * as pkginfo from '../../package.json';
+import pkginfo from '../../package.json';
 
 const pinoLogger = pino();
 
