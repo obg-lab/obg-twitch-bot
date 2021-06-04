@@ -6,3 +6,4 @@ services:
     build: .
     environment:
       NODE_ENV: production
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
