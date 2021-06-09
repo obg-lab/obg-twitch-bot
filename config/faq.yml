@@ -13,7 +13,7 @@
     - 'O @egermano montou um servidor a partir de um Xeon E5 usado e instalou o URANID. Veja o vídeo da montagem do servidor: https://www.youtube.com/watch?v=pFUoFV83P7k'
     - 'O @germano tem 2 servidores atualmente um Xeon E5 com Unraid e um Udoo X86 com Ubuntu 20.04 para automação residêncial.'
 - name: jornadas-dev
-  keywords: jornadas, github, jornadasdev, jornadadev, jornada
+  keywords: jornadas, jornadasdev, jornadadev, jornada
   streaming: false
   username: egermano
   answers:
