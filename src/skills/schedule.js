@@ -2,8 +2,8 @@ import cron from 'node-cron';
 import * as _ from 'lodash';
 import { say } from '../components/chatClient.js';
 import { logger } from '../logger/index.js';
-import { load } from '../service/configFiles.js';
-import { isUserStreaming } from '../service/stream.js';
+import { load } from '../services/configFiles.js';
+import { isUserStreaming } from '../services/stream.js';
 
 export const scheduled = () => {
   try {
