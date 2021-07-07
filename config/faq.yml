@@ -18,3 +18,10 @@
   username: egermano
   answers:
     - 'Github do jornadas.dev https://github.com/obg-lab/jornada-site e https://github.com/obg-lab/jornada-emails'
+- name: gitkraken
+  keywords: gitkraken, git, cliente git
+  streaming: false
+  username: egermano
+  answers:
+    - 'O @egermano ta usando o cliente de Git chamado Gitkraken, faz o download e testa você também: https://www.gitkraken.com/invite/w5hJ7upU'
+    - 'O @egermano ta usando o MELHOR cliente de git multiplataforma, o Gitkraken. https://www.gitkraken.com/invite/w5hJ7upU'
