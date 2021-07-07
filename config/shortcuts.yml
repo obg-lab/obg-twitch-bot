@@ -23,4 +23,12 @@
   streaming: false
   messages:
     - 'Segue o @egermano também no github: https://github.com/egermano'
+- name: site
+  username: egermano
+  streaming: false
+  mqtt:
+    topic: /obg-twitch-bot/shortcut/site
+    payload: true
+  messages:
+    - 'O site do @egermano é https://egermano.com'
 
