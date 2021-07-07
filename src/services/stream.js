@@ -1,18 +1,8 @@
 import { ApiClient } from 'twitch';
-import { RefreshableAuthProvider, StaticAuthProvider } from 'twitch-auth';
+import { ClientCredentialsAuthProvider } from 'twitch-auth';
 import { logger } from '../logger/index.js';
 
-const authProvider = new RefreshableAuthProvider(
-  new StaticAuthProvider(process.env.CLIENT_ID, process.env.ACCESS_TOKEN),
-  {
-    clientSecret: process.env.CLIENT_SECRET,
-    refreshToken: process.env.REFRESH_TOKEN,
-    onRefresh: (token) => {
-      // do things with the new token data, e.g. save them in your database
-      accessToken = token;
-    },
-  }
-);
+const authProvider = new ClientCredentialsAuthProvider(process.env.CLIENT_ID, process.env.CLIENT_SECRET);
 
 const apiClient = new ApiClient({ authProvider });
 
