@@ -31,4 +31,9 @@
     payload: true
   messages:
     - 'O site do @egermano é https://egermano.com'
+- name: ping
+  username: egermano
+  streaming: false
+  messages:
+    - 'pong!'
 
