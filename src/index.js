@@ -5,13 +5,12 @@ import { faq } from './skills/faq.js';
 import { shortcuts } from './skills/shortcut.js';
 
 (async () => {
-  try {
-    await chatClient.connect();
-
+  try {    
     scheduled();
     faq();
     shortcuts();
     
+    await chatClient.listening();
   } catch (error) {
     logger.error(error, 'Error on bootstrap chat.');
   }
