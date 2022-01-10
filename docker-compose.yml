@@ -2,7 +2,7 @@ version: '3'
 
 services:
   bot:
-    image: 192.168.15.28:5000/obg-twitch-bot
+    image: miles-davis.egermano.com:5000/obg-twitch-bot
     build: .
     environment:
       NODE_ENV: production
