@@ -37,6 +37,7 @@ export const connect = async () => {
     try {
       client.connect();
     } catch (error) {
+      logger.error('Error connecting on Twitch chat.');
       reject(error);
     }
   });
