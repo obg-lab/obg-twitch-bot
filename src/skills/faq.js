@@ -7,12 +7,10 @@ export const faq = () => {
   try {
     const file = load('faq');
 
-    chatEvents.on('message', async (channel, context, message, self) => {
-      const username = context['display-name'];
-
+    chatEvents.on('message', async (channel, user, message, self) => {
       const isQuestion = message.split('')[message.length - 1] === '?';
 
-      if (!isQuestion || username === process.env.BOT_USERNAME) {
+      if (!isQuestion || user === process.env.BOT_USERNAME) {
         return false;
       }
 
@@ -36,13 +34,13 @@ export const faq = () => {
         const messageToSay = answer.answers[index];
 
         if (answer.streaming) {
-          const isStreaming = await isUserStreaming(username);
+          const isStreaming = await isUserStreaming(answer.username);
 
           if (isStreaming) {
-            return say(`@${username} ${messageToSay}`);
+            return say(`${messageToSay}`, self);
           }
         } else {
-          return say(`@${username} ${messageToSay}`);
+          return say(`${messageToSay}`, self);
         }
       }
     });
