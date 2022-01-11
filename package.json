@@ -27,10 +27,6 @@
     "pino": "^6.11.3",
     "pino-elasticsearch": "^5.4.0",
     "pkginfo": "^0.4.1",
-    "tmi.js": "^1.8.3",
-    "twitch": "^4.5.5",
-    "twitch-auth": "^4.5.5",
-    "twitch-chat-client": "^4.6.0",
     "yaml": "^1.10.2"
   },
   "devDependencies": {
