@@ -7,8 +7,8 @@ export const shortcuts = () => {
   try {
     const file = load('shortcuts');
 
-    chatEvents.on('message', async (channel, context, message, self) => {
-      if (context['display-name'] === process.env.BOT_USERNAME) {
+    chatEvents.on('message', async (channel, user, message, self) => {
+      if (user  === process.env.BOT_USERNAME) {
         return false;
       }
 
@@ -22,10 +22,10 @@ export const shortcuts = () => {
           const isStreaming = await isUserStreaming(shortcut.username);
 
           if (isStreaming) {
-            return say(`@${context['display-name']} ${messageToSay}`);
+            return say(`${messageToSay}`, self);
           }
         } else {
-          return say(`@${context['display-name']} ${messageToSay}`);
+          return say(`${messageToSay}`, self);
         }
       }
     });
