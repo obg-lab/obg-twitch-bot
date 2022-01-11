@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import { RefreshingAuthProvider } from '@twurple/auth';
+import { logger } from '../logger/index.js';
 
 const tokenFilePath = path.join(process.cwd(), `config/tokens.json`);
 const tokenData = JSON.parse(await fs.readFile(tokenFilePath));
