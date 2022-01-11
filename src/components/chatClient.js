@@ -1,56 +1,82 @@
 import EventEmitter from 'events';
-import * as tmi from 'tmi.js';
+import { ChatClient } from '@twurple/chat';
 import * as dotenv from 'dotenv';
 import { logger } from '../logger/index.js';
+import { getAuthProvider } from './auth.js';
 
 dotenv.config();
-
 class ChatEmitter extends EventEmitter {}
-
 export const chatEvents = new ChatEmitter();
 
-const options = {
-  identity: {
-    username: process.env.BOT_USERNAME,
-    password: process.env.OAUTH_TOKEN,
-  },
-  connection: {
-    reconnect: true,
-  },
-  channels: [process.env.CHANNEL_NAME],
-};
+export let client = null;
 
-export const client = new tmi.Client(options);
+const getClient = async () => {
+  if (client && client.isConnected) return client;
 
-client.on('message', async (channel, context, message, self) => {
-  logger.info({ channel, context, message, self }, 'got a new message');
-  chatEvents.emit('message', channel, context, message, self);
-});
+  const authProvider = getAuthProvider();
 
-export const connect = async () => {
-  return new Promise((resolve, reject) => {
-    client.on('connected', (addr, port) => {
-      logger.info({ addr, port }, 'Bot connected');
-      resolve();
-    });
-
-    try {
-      client.connect();
-    } catch (error) {
-      logger.error('Error connecting on Twitch chat.');
-      reject(error);
-    }
-  });
-};
-
-export const say = async (message) => {
-  client.say(process.env.CHANNEL_NAME, message);
-
-  logger.info(
-    {
-      channel: process.env.CHANNEL_NAME,
-      sent: message,
+  client = new ChatClient({
+    authProvider,
+    channels: [process.env.CHANNEL_NAME],
+    logger: {
+      minLevel: 'info',
+      custom: logger.child({chatClient: '@twurple/chat'})
     },
-    'Message sent to bot.'
-  );
+    botLevel: 'verified',
+  });
+
+  client.onDisconnect((manually, reason) => {
+    logger.warn({ manually, reason }, 'Chat client disconnected.');
+    client = getClient();
+  });
+
+  client.onConnect(() => {
+    logger.info('Bot connected.');
+    chatEvents.emit('onConnect');
+  });
+
+  try {
+    logger.info('Try to connect to chat...');
+
+    await client.connect();
+
+    logger.info({ isConnected: client.isConnected }, 'Chat client connected');
+
+    return client;
+  } catch (err) {
+    logger.error({ err }, 'Error connecting to chat client');
+
+    client = null;
+  }
+};
+
+export const listening = async () => {
+  logger.info('Setting up chat listening');
+
+  const client = await getClient();
+
+  client.onMessage(async (channel, user, message, self) => {
+    logger.info({ channel, user, message, self }, 'got a new message');
+    chatEvents.emit('message', channel, user, message, self);
+  });
+
+  return client;
+};
+
+export const say = async (message, replyTo = null) => {
+  const client = await getClient();
+
+  try {
+    await client.say(process.env.CHANNEL_NAME, message, { replyTo });
+
+    logger.info(
+      {
+        channel: process.env.CHANNEL_NAME,
+        sent: message,
+      },
+      'Message sent to bot'
+    );
+  } catch (err) {
+    logger.error({ err }, 'Error sending message to bot');
+  }
 };

@@ -1,34 +1,46 @@
 - name: discord
   username: egermano
   streaming: false
+  replyTo: false
   messages:
     - 'Comunidade do discord: https://discord.gg/3UKZT7cVWG'
-- name: ghjornada
-  username: egermano
-  streaming: false
-  messages:
-    - 'Github do jornadas.dev https://github.com/obg-lab/jornada-site e https://github.com/obg-lab/jornada-emails'
 - name: youtube
   username: egermano
   streaming: false
+  replyTo: false
   messages:
     - 'Segue o @egermano lá no yotube, Tem muito conteúdo legal sobre tecnologia por lá. https://youtube.com/egermano'
+- name: twitter
+  username: egermano
+  streaming: false
+  replyTo: false
+  messages:
+    - O @egermano tá sempre falando umas besteiras lá no twitter, já vou avisando... Segue ele lá https://twitter.com/egermano
 - name: instagram
   username: egermano
   streaming: false
+  replyTo: false
   messages:
     - 'Quer mais conteúdo sobre tecnologia e acompanhar um pouco da rotina do @egermano? Segue ele no instagram. https://instagram.com/egermano'
 - name: github
   username: egermano
   streaming: false
+  replyTo: false
   messages:
     - 'Segue o @egermano também no github: https://github.com/egermano'
 - name: site
   username: egermano
   streaming: false
+  replyTo: false
   mqtt:
     topic: /obg-twitch-bot/shortcut/site
     payload: true
   messages:
     - 'O site do @egermano é https://egermano.com'
+- name: ping
+  username: egermano
+  streaming: false
+  replyTo: true
+  messages:
+    - 'pong!'
 

@@ -57,3 +57,11 @@
     - Se você ta curtindo essa live, deixa seu follow
     - Se você chegou até aqui nessa live e já deixou seu follow, considere ser subscriber
     - Sabia que se você tem Amazon Prime, você pode ser um Subscriber aqui sem pagar nada?
+- name: gravando
+  streaming: true
+  username: egermano
+  schedule: '13 */15 * * * *'
+  messages:
+    - Já vou te avisando, que tudo o que você escreve por aqui é armazenado em forma de log para o meu TCC.
+    - Tudo o que você disser aqui poderá ser usado contra você no tribunal.
+    - Você está sendo monitorado.
