@@ -1,10 +1,8 @@
 import EventEmitter from 'events';
-import { promises as fs } from 'fs';
-import path from 'path';
-import { RefreshingAuthProvider } from '@twurple/auth';
 import { ChatClient } from '@twurple/chat';
 import * as dotenv from 'dotenv';
 import { logger } from '../logger/index.js';
+import { getAuthProvider } from './auth.js';
 
 dotenv.config();
 class ChatEmitter extends EventEmitter {}
@@ -15,33 +13,14 @@ export let client = null;
 const getClient = async () => {
   if (client && client.isConnected) return client;
 
-  const tokenFilePath = path.join(process.cwd(), `config/tokens.json`);
-  const tokenData = JSON.parse(await fs.readFile(tokenFilePath));
-
-  const authProvider = new RefreshingAuthProvider(
-    {
-      clientId: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-      onRefresh: async (newTokenData) => {
-        logger.info('Auth token was refreshed');
-        await fs.writeFile(
-          tokenFilePath,
-          JSON.stringify(newTokenData, null, 4),
-          'UTF-8'
-        );
-      },
-    },
-    {
-      accessToken: tokenData.access_token,
-      refreshToken: tokenData.refresh_token,
-    }
-  );
+  const authProvider = getAuthProvider();
 
   client = new ChatClient({
     authProvider,
     channels: [process.env.CHANNEL_NAME],
     logger: {
-      minLevel: 'debug',
+      minLevel: 'info',
+      custom: logger.child({chatClient: '@twurple/chat'})
     },
     botLevel: 'verified',
   });
