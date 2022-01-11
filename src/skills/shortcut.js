@@ -8,7 +8,7 @@ export const shortcuts = () => {
     const file = load('shortcuts');
 
     chatEvents.on('message', async (channel, user, message, self) => {
-      if (user  === process.env.BOT_USERNAME) {
+      if (user === process.env.BOT_USERNAME) {
         return false;
       }
 
@@ -25,7 +25,7 @@ export const shortcuts = () => {
             return say(`${messageToSay}`, self);
           }
         } else {
-          return say(`${messageToSay}`, self);
+          return say(`${messageToSay}`, shortcut.replyTo ? self : null);
         }
       }
     });
