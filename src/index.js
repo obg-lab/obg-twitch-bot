@@ -11,6 +11,8 @@ import { shortcuts } from './skills/shortcut.js';
     shortcuts();
     
     await chatClient.listening();
+
+    chatClient.say('O bot ta on!');
   } catch (error) {
     logger.error(error, 'Error on bootstrap chat.');
   }
