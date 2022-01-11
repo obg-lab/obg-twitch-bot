@@ -12,7 +12,7 @@ import { shortcuts } from './skills/shortcut.js';
     
     await chatClient.listening();
 
-    chatClient.say('O bot ta on!');
+    chatClient.chatEvents.on('onConnect', async () => chatClient.say('O bot ta on!'));
   } catch (error) {
     logger.error(error, 'Error on bootstrap chat.');
   }
